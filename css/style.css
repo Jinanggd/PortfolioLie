@@ -8,6 +8,15 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   background-color: #fff;
   color: #111;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+html{
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 header {
@@ -53,7 +62,29 @@ header {
   color: #888;
 }
 
-#inicio {
+.main-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.main-container::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+}
+
+/* LATEST WORK */
+
+#latestwork {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -113,4 +144,33 @@ header {
 .slider-dots .dot.active {
   background-color: white;
   outline-color: black;
+}
+
+/*ABOUT ME */
+.about-section {
+  padding: 80px 20px;
+  height: 100vh;
+  background: #111; /* un fondo oscuro para contraste */
+  color: #eee;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section .container {
+  max-width: 800px;
+}
+
+.about-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ccc;
 }

@@ -33,7 +33,6 @@ function nextSlide() {
     clearTimeout(autoSlideTimeOut);
     autoSlideTimeOut = setTimeout(()=>{
         current = ((current + 1 ) % slides.length);
-        console.log(isTransitioning);
         showSlide(current);
     }, 5000);
 }

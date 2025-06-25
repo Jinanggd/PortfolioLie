@@ -17,14 +17,14 @@
 
     <div class="center">
         <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#sobremi">Sobre mí</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#latestwork">Latest work</a>
+        <a href="#aboutme">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
         </nav>
     </div>
 
-    <div class="right redes">
+    <div class="right socialmedia">
         <a href="https://instagram.com" target="_blank"><a href="https://instagram.com">📸</a>
 
 
@@ -33,22 +33,37 @@
     </div>
     </header>
 
-<!-- HOME SLIDER -->
-    <section id="inicio">
-        <div class="slider">
-            <div class="slide visible">
-                <img src="img/Slides/slide1.png" alt="Obra 1" />
+    <div class="main-container">
+        <!-- HOME SLIDER -->
+        <section id="latestwork" class="section">
+            <div class="slider">
+                <div class="slide visible">
+                    <img src="img/Slides/slide1.png" alt="Obra 1" />
+                </div>
+                <div class="slide">
+                    <video src="videos/Slides/slide1.mp4" muted playsinline></video>
+                </div>
+                <div class="slide">
+                    <img src="img/Slides/slide2.png" alt="Obra 3" />
+                </div>
+                <div class="slider-dots" id="slider-dots"></div>
             </div>
-            <div class="slide">
-                <video src="videos/Slides/slide1.mp4" muted playsinline></video>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="aboutme" class="section about-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                aaaaaaaa
+                </p>
             </div>
-            <div class="slide">
-                <img src="img/Slides/slide2.png" alt="Obra 3" />
-            </div>
-            <div class="slider-dots" id="slider-dots"></div>
-        </div>
-    </section>
+        </section>
+
+    </div>
+
 
     <script src="js/AutoSlide.js"></script>
+    <script src="js/SectionJumper.js"></script>
 </body>
 </html>
