@@ -10,7 +10,6 @@ mainContainer.addEventListener('wheel', (e) => {
   const scrollTop = mainContainer.scrollTop;
   const viewportHeight = mainContainer.clientHeight;
 
-  // Encontrar índice actual basado en scrollTop
   let currentIndex = 0;
   for (let i = 0; i < sections.length; i++) {
     if (scrollTop >= sections[i].offsetTop) {
@@ -19,7 +18,7 @@ mainContainer.addEventListener('wheel', (e) => {
   }
 
   if (delta > 0) {
-    // Scroll down: ir a siguiente sección
+    // Scroll down
     if (currentIndex < sections.length - 1) {
       isScrolling = true;
       const nextTop = sections[currentIndex + 1].offsetTop;
@@ -27,7 +26,7 @@ mainContainer.addEventListener('wheel', (e) => {
       setTimeout(() => { isScrolling = false; }, 700);
     }
   } else {
-    // Scroll up: ir a anterior sección
+    // Scroll up
     if (currentIndex > 0) {
       isScrolling = true;
       const prevTop = sections[currentIndex - 1].offsetTop;
