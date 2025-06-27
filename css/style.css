@@ -67,9 +67,9 @@ header {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  scroll-padding-top: 50px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  scroll-padding-top: 0px; /* No SPACE for HEADER */
 }
 
 .main-container::-webkit-scrollbar {
@@ -77,8 +77,9 @@ header {
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: start;
+  scroll-margin-top: 0;
   display: flex;
 }
 
@@ -148,29 +149,102 @@ header {
 
 /*ABOUT ME */
 .about-section {
-  padding: 80px 20px;
   height: 100vh;
-  background: #111; /* un fondo oscuro para contraste */
-  color: #eee;
-  text-align: center;
-  min-height: 60vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.about-section .container {
-  max-width: 800px;
+.about-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
-.about-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+/* Imagen con fondo rojo */
+.about-image {
+  background-color: red;
+  width: 0;
+  overflow: hidden;
+  transition: width 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-section p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #ccc;
+.about-image.expand {
+  width: 33.33%;
+}
+
+/* Imagen circular */
+.circle-image {
+  width: 80%;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenido con fondo negro */
+.about-content {
+  background-color: #111;
+  color: #eee;
+  width: 0;
+  overflow: hidden;
+  transition: width 1s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-content.expand {
+  width: 66.66%;
+  padding: 40px;
+}
+
+/* Carrusel */
+.carousel {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-btn {
+  background: none;
+  border: 2px solid #eee;
+  color: #eee;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: #eee;
+  color: #111;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
