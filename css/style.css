@@ -258,6 +258,10 @@ header {
   overflow: hidden;
 }
 
+.project-card.disable-hover {
+  pointer-events: none;
+}
+
 .project-card img {
   width: 100%;
   height: 100%;
@@ -278,25 +282,51 @@ header {
   display: block;
 }
 
+.project-overlay{
+  position: absolute;
+  inset:0;
+  background-color: rgba(0,0,0,0.5);
+  pointer-events: none;
+  transition: opacity 0.5s ease
+}
+
+.project-card:hover .project-overlay{
+  opacity: 0;
+}
+
 .project-hover {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  justify-content: flex-end;
+  background-color: rgba(255,0,0,0.5);
+  bottom: 0;
+  left: 0;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  padding: 20px;
+  opacity: 1;
+  padding: 5%;
   text-align: center;
 }
 
-.project-card:hover .project-hover {
+.card-title {
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: transform 0.4s ease;
+}
+
+.card-extra{
+  transform: translateY(100%);
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  transition: max-height 0.5 ease transform 0.5 ease opacity 0.4s ease;
+}
+
+.project-card:hover .card-extra {
+  max-height: 50%;
+  transform: translateY(0);
   opacity: 1;
 }
 

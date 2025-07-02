@@ -20,8 +20,14 @@ function onEntryProjectsAnimation() {
             if (entry.isIntersecting) {
                 const cards = document.querySelectorAll('.project-card');
                 cards.forEach((card, i) => {
+                    //disable hover first
+                    card.classList.add('disable-hover');
+
+                    //Card animation itself
                     const direction = i % 2 === 0 ? 'fadeInUpBig' : 'fadeInDownBig';
-                    animateCSSHTMLElement(card, direction);
+                    animateCSSHTMLElement(card, direction).then((m) => {
+                        card.classList.remove('disable-hover');
+                    });
                 });
             }
         });
