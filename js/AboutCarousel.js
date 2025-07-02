@@ -13,20 +13,3 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   carrousel_items[carrouselIndex].classList.add("active");
 });
 
-// Swipe animation
-const observer_SwipeAnimation = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const img = document.querySelector(".about-image");
-    const content = document.querySelector(".about-content");
-
-    if (entry.isIntersecting) {
-      img.classList.add("expand");
-      content.classList.add("expand");
-    } else {
-      img.classList.remove("expand");
-      content.classList.remove("expand");
-    }
-  });
-}, { threshold: 0.3 });
-
-observer_SwipeAnimation.observe(document.getElementById("aboutme"));

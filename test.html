@@ -1,83 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Animación Cards Seguro</title>
-<style>
-  html, body {
-    margin: 0; padding: 0; height: 100%;
-  }
-  #projects {
-    height: 100vh;
-    overflow-y: auto;
-    background: #222;
-  }
-  .project-card {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    color: white;
-    opacity: 0;
-    transform: translateY(0);
-    transition: transform 2s ease, opacity 2s ease;
-  }
-  .slide-from-top {
-    transform: translateY(-100vh);
-  }
-  .slide-from-bottom {
-    transform: translateY(100vh);
-  }
-  .animate-in {
-    transform: translateY(0);
-    opacity: 1;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lie Jin Wang – Portfolio</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  
+  <!-- Íconos Font Awesome CDN (para redes) -->
 </head>
-<body>
+<div class="animate__animated animate__bounce">
+ <h1 >An animated element</h1>
 
-<section id="projects">
-  <div class="project-card" style="background:#e74c3c;">Card 1 (impar)</div>
-  <div class="project-card" style="background:#27ae60;">Card 2 (par)</div>
-  <div class="project-card" style="background:#2980b9;">Card 3 (impar)</div>
-  <div class="project-card" style="background:#f39c12;">Card 4 (par)</div>
-  <div class="project-card" style="background:#8e44ad;">Card 5 (impar)</div>
-</section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const section = document.getElementById('projects');
-    
-    function animateCards() {
-      const cards = section.querySelectorAll('.project-card');
-      cards.forEach((card, i) => {
-        card.classList.remove('slide-from-top', 'slide-from-bottom', 'animate-in');
-        void card.offsetWidth; // Reflow para reiniciar animación
-        if (i % 2 === 0) {
-          card.classList.add('slide-from-bottom');
-        } else {
-          card.classList.add('slide-from-top');
-        }
-        setTimeout(() => {
-          card.classList.add('animate-in');
-        }, i * 300);
-      });
-    }
-    
-    // Observer para disparar animación al entrar en viewport
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCards();
-        }
-      });
-    }, { threshold: 0.5 });
-    
-    observer.observe(section);
-  });
-</script>
-
-</body>
-</html>
+</div>
