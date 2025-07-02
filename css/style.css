@@ -343,3 +343,67 @@ header {
 .project-card:hover img {
   transform: scale(1.1);
 }
+/* CONTACT */
+.contact-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  color: #111;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  color: #555;
+}
+
+.contact-socials {
+  margin: 1rem 0 3rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  font-weight: 600;
+  color: #00f2ff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #0077aa;
+  text-decoration: underline;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.contact-email {
+  font-size: 1.2rem;
+  color: #00f2ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
