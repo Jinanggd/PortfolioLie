@@ -1,20 +1,20 @@
-const items = document.querySelectorAll(".carousel-item");
+const carrousel_items = document.querySelectorAll(".carousel-item");
 let carrouselIndex = 0;
 
 document.getElementById("prevBtn").addEventListener("click", () => {
-  items[carrouselIndex].classList.remove("active");
-  carrouselIndex = (carrouselIndex - 1 + items.length) % items.length;
-  items[carrouselIndex].classList.add("active");
+  carrousel_items[carrouselIndex].classList.remove("active");
+  carrouselIndex = (carrouselIndex - 1 + carrousel_items.length) % carrousel_items.length;
+  carrousel_items[carrouselIndex].classList.add("active");
 });
 
 document.getElementById("nextBtn").addEventListener("click", () => {
-  items[carrouselIndex].classList.remove("active");
-  carrouselIndex = (carrouselIndex + 1) % items.length;
-  items[carrouselIndex].classList.add("active");
+  carrousel_items[carrouselIndex].classList.remove("active");
+  carrouselIndex = (carrouselIndex + 1) % carrousel_items.length;
+  carrousel_items[carrouselIndex].classList.add("active");
 });
 
 // Swipe animation
-const observer = new IntersectionObserver((entries) => {
+const observer_SwipeAnimation = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const img = document.querySelector(".about-image");
     const content = document.querySelector(".about-content");
@@ -29,4 +29,4 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 
-observer.observe(document.getElementById("aboutme"));
+observer_SwipeAnimation.observe(document.getElementById("aboutme"));

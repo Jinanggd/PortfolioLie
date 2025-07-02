@@ -1,27 +1,27 @@
 const slides = document.querySelectorAll(".slide");
-const dotsContainer = document.getElementById("slider-dots");
+const slides_dotsContainer = document.getElementById("slider-dots");
 
-let current = 0;
+let slides_CurrentIndex = 0;
 let autoSlideTimeOut = null;
 let isTransitioning = false;
 
 slides.forEach((sld,i)=>{
     const dot = document.createElement("div");
     dot.classList.add("dot");
-    if(i === current) dot.classList.add("active");
+    if(i === slides_CurrentIndex) dot.classList.add("active");
 
     dot.addEventListener("click",(e)=>{
         e.stopPropagation();
         if(isTransitioning) return;
         clearTimeout(autoSlideTimeOut);
-        current = i;
-        showSlide(current);
+        slides_CurrentIndex = i;
+        showSlide(slides_CurrentIndex);
     });
 
-    dotsContainer.appendChild(dot);
+    slides_dotsContainer.appendChild(dot);
 });
 
-const dots = dotsContainer.querySelectorAll(".dot");
+const dots = slides_dotsContainer.querySelectorAll(".dot");
 
 function updateDots(index){
     dots.forEach((dot,i)=>{
@@ -32,8 +32,8 @@ function updateDots(index){
 function nextSlide() {
     clearTimeout(autoSlideTimeOut);
     autoSlideTimeOut = setTimeout(()=>{
-        current = ((current + 1 ) % slides.length);
-        showSlide(current);
+        slides_CurrentIndex = ((slides_CurrentIndex + 1 ) % slides.length);
+        showSlide(slides_CurrentIndex);
     }, 5000);
 }
 
@@ -63,8 +63,8 @@ function showSlide(index) {
         video.play().then(() => {
             video.onended = () => {
                 clearTimeout(autoSlideTimeOut);
-                current = (current + 1) % slides.length;
-                showSlide(current);
+                slides_CurrentIndex = (slides_CurrentIndex + 1) % slides.length;
+                showSlide(slides_CurrentIndex);
             };
             isTransitioning = false;
         }).catch(() => {
@@ -78,4 +78,4 @@ function showSlide(index) {
     }
 }
 
-showSlide(current);
+showSlide(slides_CurrentIndex);
