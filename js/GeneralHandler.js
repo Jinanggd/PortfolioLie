@@ -12,6 +12,51 @@ function setProjectsCardWidth() {
 }
 
 // AutoSlider for Latest work section
+function initSlider(){
+    /*
+    fetch('resources/LatestWorkSlides/slides.json')
+    .then(response => response.json())
+    .then(slides => {
+        const slider = document.querySelector('.slider');
+        
+        slides.forEach(slide => {
+            const slideDiv = document.createElement('div');
+            slideDiv.classList.add('slide');
+
+            if(slide.type === 'video'){
+                slideDiv.innerHTML = `<video src="resources/LatestWorkSlides/${slide.src} playsinline muted></video>`;
+            } else {
+                slideDiv.innerHTML = `<img src="resources/LatestWorkSlides/${slide.src}`;
+            }
+
+            slider.appendChild(slideDiv);
+        });
+
+        autoSlider();
+    })
+    .catch(error => console.error('Error reading slides: ', error));*/
+    const slider = document.querySelector('.slider');
+    
+    slides_array.forEach(slide => {
+        const slideDiv = document.createElement('div');
+        slideDiv.classList.add('slide');
+        let e;
+
+        if(slide.type === 'video'){
+            e = document.createElement('video');
+            e.src = `resources/LatestWorkSlides/${slide.src}`;
+            e.muted = true;
+        } else {
+            e = document.createElement('img');
+            e.src = `resources/LatestWorkSlides/${slide.src}`;
+        }
+        slideDiv.appendChild(e);
+        slider.appendChild(slideDiv);
+    });
+
+    autoSlider();
+}
+
 function autoSlider(){
     const slides = document.querySelectorAll(".slide");
     const slides_dotsContainer = document.getElementById("slider-dots");
@@ -169,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });*/
 
 // Latest work Section - auto slider
-autoSlider();
+initSlider();
+//autoSlider();
 
 // About Me section - Start carrousel
 startAboutMeCarrousel();
