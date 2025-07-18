@@ -1,12 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lie Jin Wang – Portfolio</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  
-  <!-- Íconos Font Awesome CDN (para redes) -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Divisor Diagonal con clip-path</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .section {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    position: relative;
+  }
+  .section1 {
+    background-color: #0055aa;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  }
+  .section2 {
+    background-color: #ffaa00;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  }
+</style>
 </head>
-<div class="animate__animated animate__bounce">
- <h1 >An animated element</h1>
+<body>
 
-</div>
+<section class="section section1">
+  <h2>Sección 1</h2>
+</section>
+
+<section class="section section2">
+  <h2>Sección 2</h2>
+</section>
+
+</body>
+</html>
