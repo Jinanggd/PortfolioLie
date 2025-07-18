@@ -185,19 +185,40 @@ function autoScroller(){
 //About section Carrousel 
 function startAboutMeCarrousel(){
     const carrousel_items = document.querySelectorAll(".carousel-item");
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
     let carrouselIndex = 0;
+    let animation = 'none';
 
-    document.getElementById("prevBtn").addEventListener("click", () => {
-        carrousel_items[carrouselIndex].classList.remove("active");
-        carrouselIndex = (carrouselIndex - 1 + carrousel_items.length) % carrousel_items.length;
-        carrousel_items[carrouselIndex].classList.add("active");
+    function updateCarrousel(animation){
+        carrousel_items.forEach((item, i) =>{
+            item.classList.toggle('active', i === carrouselIndex);
+            if(i === carrouselIndex){
+                animateCSSHTMLElement(item,animation);
+            }
+        });
+
+        prevBtn.classList.toggle('hidden', carrouselIndex === 0);
+        nextBtn.classList.toggle('hidden', carrouselIndex === carrousel_items.length-1);
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if(carrouselIndex > 0){
+            animation = 'fadeInLeft';
+            carrouselIndex --;
+            updateCarrousel(animation);
+        }
     });
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
-        carrousel_items[carrouselIndex].classList.remove("active");
-        carrouselIndex = (carrouselIndex + 1) % carrousel_items.length;
-        carrousel_items[carrouselIndex].classList.add("active");
+    nextBtn.addEventListener("click", () => {
+        if(carrouselIndex < carrousel_items.length - 1){
+            animation = 'fadeInRight';
+            carrouselIndex ++;
+            updateCarrousel(animation);
+        }
     });
+
+    updateCarrousel(animation);
 }
 
 // Calling functions

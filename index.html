@@ -44,7 +44,7 @@
         <!-- HOME SLIDER -->
         <section id="latestwork" class="section">
             <div class="slider">
-                <!--
+                <!-- !Added in JS!
                 <div class="slide visible">
                     <img src="img/Slides/slide1.png" alt="Obra 1" />
                 </div>
@@ -65,40 +65,125 @@
             <div class="about-container animate__animated">
                 <div class="about-image">
                     <div class="circle-image">
-                        <img src="img/Slides/slide2.png" alt="Lie Jin Wang" />
+                        <img src="resources/AboutMe/ProfPic.jpg" class="ab-image-main"/>
+                        <img src="resources/AboutMe/ProfPic2.png" class="ab-image-eg"/>
                     </div>
                 </div>
 
                 <div class="about-content">
-                    <button class="carousel-btn left" id="prevBtn">⬅</button>
+                    <button class="carousel-btn" id="prevBtn">
+                        <i data-lucide="circle-chevron-left"></i>
+                    </button>
                     <div class="carousel">
                         <div class="carousel-item active">
                             <h2>ABOUT ME</h2>
-                            <p>aaaaaaaa</p>
+                            <p>  
+                                Hi there! :D<br>
+                                My name is Lie Jin Wang, and I'm a Game Artist based in Barcelona, Spain.<br><br>
+                                Over the past three years, I’ve worked at Novarama, a game studio in Barcelona, as a Game Artist. My tasks included 3D modeling, texturing, UI design, VFX, and level art.<br><br>
+                                I’m currently working as a Software Developer at VW Group Services while steering my portfolio towards a Concept Art or VFX Artist profile. I'm always eager to learn new things, so if you think I could be a great fit for your team, don’t hesitate to reach out!
+                            </p>
                         </div>
                         <div class="carousel-item">
                             <h2>SKILLS</h2>
-                            <!--
-                            <ul>
-                                <li>Photoshop</li>
-                                <li>After Effects</li>
-                                <li>Blender</li>
-                                <li>Javascript</li>
-                            </ul>
-                            -->
+                            <div class="skills-icons">
+                                <img src="resources/Icons/ICOSkills/blender.svg" alt="Blender" title="Blender" />
+                                <img src="resources/Icons/ICOSkills/autodesk3dsmax.svg" alt="3DsMax" title="3DsMax" />
+                                <img src="resources/Icons/ICOSkills/zbrush.svg" alt="Zbrush" title="Zbrush" />
+                                <img src="resources/Icons/ICOSkills/substancepainter.svg" alt="SubstancePainter" title="Substance Painter" />
+                                <img src="resources/Icons/ICOSkills/unity.svg" alt="Unity" title="Unity" />
+                                <img src="resources/Icons/ICOSkills/unrealengine.svg" alt="UnrealEngine" title="Unreal Engine" />
+                            </div>
+                            <div class="skills-icons">
+                                <img src="resources/Icons/ICOSkills/photoshop.svg" alt="Photoshop" title="Photoshop" />
+                                <img src="resources/Icons/ICOSkills/clipstudio.svg" alt="ClipStudioPaint" title="Clip Studio Paint" />
+                            </div>
+                            <div class="skills-icons">
+                                <img src="resources/Icons/ICOSkills/cplusplus.svg" alt="C++" title="C++" />
+                                <img src="resources/Icons/ICOSkills/html5.svg" alt="HTML5" title="HTML5" />
+                                <img src="resources/Icons/ICOSkills/css.svg" alt="CSS" title="CSS" />
+                                <img src="resources/Icons/ICOSkills/javascript.svg" alt="JavaScript" title="JavaScript" />
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <h2>TIMELINE</h2>
-                            <!--
-                            <ul>
-                                <li><strong>2024</strong> – Proyecto ABC</li>
-                                <li><strong>2023</strong> – Exposición XYZ</li>
-                                <li><strong>2022</strong> – Graduación</li>
-                            </ul>
-                            -->
+                            <h2>EXPERIENCE</h2>
+                            
+                            <div class="experience-item">
+                                <div class="experience-logo-container">
+                                    <a href="https://3ddigitalvenue.com/" target="_blank" rel="noopener noreferrer">
+                                        <img src="resources/Icons/ICOTimeline/3ddigitalvenue.png" alt="3D Digital Venue" class="experience-logo"/>
+                                    </a>
+                                </div>
+                                <div class="experience-item-title">3D Digital Venue</div>
+                                <div class="experience-item-time">2018 - 2021</div>
+                                <div class="experience-item-description">
+                                    <p>Tool developer</p>
+                                    <div class="experience-subdescription">
+                                        Scripts for 3DsMax (MaxScripts), Unity3D, AdobeIllustrator <br>
+                                        2D Map Generator
+                                    </div>
+                                </div>
+                                <div class="experience-item-description">
+                                    <p>
+                                        Front-End Developer
+                                    </p>
+                                    <div class="experience-subdescription">
+                                        2D map generation API development <br>
+                                        Seat Management Portal development
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-logo-container">
+                                    <a href="https://novarama.com/" target="_blank" rel="noopener noreferrer">
+                                        <img src="resources/Icons/ICOTimeline/novarama.png" alt="Novarama" class="experience-logo"/>
+                                    </a>                                    
+                                </div>
+                                <div class="experience-item-title">Novarama</div>
+                                <div class="experience-item-time">2021 - 2024</div>
+                                <div class="experience-item-description">
+                                    <p>
+                                        QA Tester
+                                    </p>
+                                    <div class="experience-subdescription">
+                                        Gameplay Testing <br>
+                                        Chinese text verification
+                                    </div>
+                                </div>
+                                <div class="experience-item-description">
+                                    <p>
+                                        Game Artist
+                                    </p>
+                                    <div class="experience-subdescription">
+                                        Props Modelling and Texturing <br>
+                                        UI <br>
+                                        VFX <br>
+                                        Level Art
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-logo-container">
+                                    <a href="https://www.volkswagen-groupservices.pt/en/" target="_blank" rel="noopener noreferrer">
+                                        <img src="resources/Icons/ICOTimeline/VWGS.svg" alt="Volkswagen Group Services" class="experience-logo"/>
+                                    </a>
+                                </div>
+                                <div class="experience-item-title">Volkswagen Group Services</div>
+                                <div class="experience-item-time">2024 - Now</div>
+                                <div class="experience-item-description">
+                                    <p>
+                                        HMI Software Developer
+                                    </p>
+                                    <div class="experience-subdescription">
+                                        NDA
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button class="carousel-btn right" id="nextBtn">➡</button>
+                    <button class="carousel-btn" id="nextBtn">
+                        <i data-lucide="circle-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -175,5 +260,9 @@
     <script src="js/global.js"></script>
     <script src="js/AnimationHandler.js"></script>
     <script src="js/GeneralHandler.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    lucide.createIcons();
+    </script>
 </body>
 </html>

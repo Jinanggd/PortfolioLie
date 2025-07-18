@@ -120,6 +120,101 @@ header {
   display: flex;
 }
 
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.skills-icons img {
+  width: 100px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transform: scale(0.8);
+}
+
+.skills-icons img:hover {
+  transform: scale(1);
+  filter: brightness(1) invert(0);
+}
+
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Cada bloque del experience */
+.experience-item {
+  vertical-align: top;
+  display: inline-block;
+  width: 32%; /* 3 columnas con gap */
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.experience-logo-container {
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.experience-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  transform: scale(0.8);
+}
+
+.experience-logo:hover {
+  transform: scale(1);
+  filter: brightness(1) invert(0);
+}
+
+
+.experience-item-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.experience-item-time {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.experience-item-description {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin:10%;
+}
+
+.experience-subdescription {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Responsive: una sola columna en pantallas pequeñas */
+@media (max-width: 900px) {
+  .experience-item {
+    width: 100%;
+  }
+}
+
 /* LATEST WORK */
 
 #latestwork {
@@ -199,9 +294,8 @@ header {
   height: 100%;
 }
 
-/* Imagen con fondo rojo */
 .about-image {
-  background-color: red;
+  background-color: #EF233C;
   width: 33%;
   overflow: hidden;
   display: flex;
@@ -209,10 +303,9 @@ header {
   justify-content: center;
 }
 
-/* Imagen circular */
 .circle-image {
   width: 80%;
-  max-width: 300px;
+  /*max-width: 300px;*/
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
@@ -227,9 +320,26 @@ header {
   object-fit: cover;
 }
 
-/* Contenido con fondo negro */
+.ab-image-main {
+  display: block;
+  z-index: 1;
+}
+
+.ab-image-eg {
+  display: none;
+  z-index: 2;
+}
+
+.circle-image:hover .ab-image-main {
+  display: none;
+}
+
+.circle-image:hover .ab-image-eg {
+  display: block;
+}
+
 .about-content {
-  background-color: #111;
+  background-color: #2B2D42;
   color: #eee;
   width: 67%;
   overflow: hidden;
@@ -245,14 +355,14 @@ header {
 }
 
 .carousel {
-  width: 80%;
+  width: 85%;
   overflow: hidden;
   position: relative;
 }
 
 .carousel-item {
   display: none;
-  animation: fadeIn 0.5s ease-in-out;
+ /* animation: fadeIn 0.5s ease-in-out;*/
 }
 
 .carousel-item.active {
@@ -261,17 +371,32 @@ header {
 
 .carousel-btn {
   background: none;
-  border: 2px solid #eee;
+  border: none;
   color: #eee;
-  font-size: 1.5rem;
-  padding: 10px 20px;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: color 0.3s;
 }
 
 .carousel-btn:hover {
-  background: #eee;
-  color: #111;
+  color: #D90429;
+  transform: scale(1.1);
+}
+
+.carousel-btn.hidden {
+  visibility: hidden;
+}
+
+.carousel-btn i[data-lucide] {
+  width: 32px;
+  height: 32px;
+  stroke: #fff; /* Cambia a tu color base */
+  stroke-width: 2.5;
+}
+
+.carousel-btn:hover i[data-lucide] {
+  stroke: #D90429; /* Color de hover */
 }
 
 /*PROJECT*/
