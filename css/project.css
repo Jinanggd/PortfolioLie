@@ -1,6 +1,18 @@
-body {
-    background-color: aliceblue;
+html, body {
+  min-height: 100vh;
+  background-color: #2B2D42;
+  overflow-y: auto;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 
 .project-background-section {
   position: relative;
@@ -26,4 +38,47 @@ body {
   height: 50%; 
   background: linear-gradient(to top, rgba(0,0,0,1), transparent);
   pointer-events: none; 
+}
+
+/* GALLERY */
+.media-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #111;
+}
+
+.media-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.media-item:hover img,
+.media-item:hover video {
+  transform: scale(1.05);
+}
+
+/* Controlar reproducción de video */
+.media-item video {
+  pointer-events: none;
+}
+
+.media-item:hover video {
+  pointer-events: auto;
+  animation-play-state: running;
+}
+
+.media-item video:not(:hover) {
+  animation-play-state: paused;
 }
